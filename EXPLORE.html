@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('your-image-url.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align items to the top */
+            margin: 0;
+            color: white;
+            overflow: hidden; /* Prevent overflow for animations */
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            padding: 15px;
+            position: fixed; /* Fix navigation at the top */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure it's on top of other elements */
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            margin-top: 80px; /* Add space for the fixed navigation */
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .button {
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s;
+            margin: 20px;
+            position: relative;
+            overflow: hidden; /* Ensure overflow is hidden for the ripple effect */
+        }
+
+        .button:hover {
+            background-color: #c70039;
+            transform: scale(1.1);
+            animation: pulse 0.6s infinite;
+        }
+
+        .description {
+            margin: 20px 0;
+            text-align: center;
+            max-width: 600px;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s ease-in-out forwards; /* Fade in */
+        }
+
+        select {
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            animation: slideIn 0.5s ease forwards; /* Slide in */
+            opacity: 0; /* Start hidden */
+        }
+
+        .tracking {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-in-out forwards; /* Fade in */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#safety">Safety Precautions</a>
+        <a href="#tracking">Live Tracking</a>
+    </nav>
+
+    <h1>Explore Safety Features</h1>
+
+    <button class="button" id="emergencySOS">Emergency SOS</button>
+    <div class="description">
+        <p>Press the Emergency SOS button to send an immediate alert to your emergency contacts and local authorities.</p>
+    </div>
+
+    <label for="safetyPrecautions">Safety Precautions:</label>
+    <select id="safetyPrecautions">
+        <option value="" disabled selected>Select a category</option>
+        <option value="older_people">Older People</option>
+        <option value="pregnant_women">Pregnant Women</option>
+    </select>
+    <div class="description" id="precautionDescription">
+        <p>Select a category to view safety precautions specific to older people or pregnant women.</p>
+    </div>
+
+    <div class="tracking">
+        <h2>Live Tracking</h2>
+        <p>Enable live tracking to share your location with trusted contacts in case of an emergency. Always stay connected!</p>
+    </div>
+
+    <script>
+        const safetyPrecautions = document.getElementById('safetyPrecautions');
+        const precautionDescription = document.getElementById('precautionDescription');
+
+        safetyPrecautions.addEventListener('change', function() {
+            if (this.value === 'older_people') {
+                precautionDescription.innerHTML = '<p>For older people, ensure they have easy access to emergency contacts and provide them with mobility aids to enhance safety.</p>';
+            } else if (this.value === 'pregnant_women') {
+                precautionDescription.innerHTML = '<p>For pregnant women, it\'s important to have a support system in place and ensure regular health check-ups for a safe pregnancy.</p>';
+            }
+        });
+
+        document.getElementById('emergencySOS').addEventListener('click', function() {
+            alert('Emergency SOS Activated! Help is on the way.');
+        });
+    </script>
+
+</body>
+</html>

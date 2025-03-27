@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-top: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #c70039;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Booking Page</h1>
+
+    <label for="transportMode">Select Mode of Transport:</label>
+    <select id="transportMode">
+        <option value="" disabled selected>Select an option</option>
+        <option value="https://www.redbus.in/">Bus</option>
+        <option value="train.html">Train</option>
+        <option value="flight.html">Flight</option>
+    </select>
+
+    <label for="elderlyOptions">Elderly Options:</label>
+    <select id="elderlyOptions">
+        <option value="" disabled selected>Select an option</option>
+        <option value="normal">Normal</option>
+        <option value="wheelchair_user">Wheelchair User</option>
+        <option value="walker_user">Walker User</option>
+    </select>
+
+    <button id="bookButton" onclick="confirmBooking()">Book Now</button>
+
+    <script>
+        function confirmBooking() {
+            const transportSelect = document.getElementById("transportMode");
+            const elderlySelect = document.getElementById("elderlyOptions");
+
+            if (transportSelect.value) {
+                let bookingDetails = `Booking confirmed for ${transportSelect.options[transportSelect.selectedIndex].text}!`;
+
+                if (elderlySelect.value) {
+                    bookingDetails += ` Elderly option selected: ${elderlySelect.options[elderlySelect.selectedIndex].text}.`;
+                }
+
+                alert(bookingDetails);
+
+                // Redirect to the corresponding transport page
+                window.location.href = transportSelect.value;
+            } else {
+                alert("Please select a mode of transport.");
+            }
+        }
+    </script>
+
+</body>
+</html>

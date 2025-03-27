@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Food Booking</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+            color: #37474f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Add padding for better spacing */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px; /* Limit container width for better readability */
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.8em;
+            color: #00695c;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 10px;
+            color: #546e7a;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 18px;
+            background-color: #f9f9f9;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #00695c;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(to right, #ff5733, #c70039);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Train Food Booking</h1>
+
+        <form action="confirmation.html" method="GET">
+            <div class="form-group">
+                <label for="trainNumber">Train Number:</label>
+                <input type="text" id="trainNumber" name="trainNumber" required>
+            </div>
+
+            <div class="form-group">
+                <label for="trainName">Train Name:</label>
+                <input type="text" id="trainName" name="trainName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" name="userName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+
+            <div class="form-group">
+                <label for="coachPosition">Coach Position:</label>
+                <input type="text" id="coachPosition" name="coachPosition" required>
+            </div>
+
+            <div class="form-group">
+                <label for="seatNumber">Seat Number:</label>
+                <input type="text" id="seatNumber" name="seatNumber" required>
+            </div>
+
+            <button type="submit">
+                <a href="https://www.ecatering.irctc.co.in/">BOOK FOOD</a>
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

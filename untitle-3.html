@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future for Forests</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #004d40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #00796b;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        section.hero {
+            background-image: url('images.jpeg'); /* Replace with actual image URL */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        section.hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        section.hero button {
+            background-color: hsl(123, 43%, 39%);
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        section.hero button:hover {
+            background-color: hsl(123, 43%, 29%);
+        }
+
+        .container {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .donate-section, .volunteer-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 20px;
+            width: 48%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #004d40;
+        }
+
+        footer {
+            background-color: #004d40;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* SOS Button */
+        .sos-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+            text-decoration: none;
+            margin: 20px 0;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #00796b;
+        }
+
+        .live-tracking {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EARTH'S EMBRACE</h1>
+        <p>Join us in making a greener world, one tree at a time.</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#donate">Donate</a>
+        <a href="#volunteer">Volunteer</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Plant a Tree, Save the Planet</h2>
+        <button onclick="alert('Join us in planting trees!')">Get Involved</button>
+    </section>
+
+    <section class="container">
+        <h2>Explore Safety Features</h2>
+        
+        <div class="live-tracking">
+            <button class="sos-button">Emergency SOS</button>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Safety Precautions</button>
+            <div class="dropdown-content">
+                <a href="#">For Older People</a>
+                <a href="#">For Pregnant Women</a>
+            </div>
+        </div>
+
+        <div class="live-tracking">
+            <p>Live Tracking of Tree Planting Events!</p>
+            <button>Track Now</button>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About EARTH'S EMBRACE</h2>
+        <p>Future for Forests is an initiative dedicated to reforestation and environmental conservation. We aim to restore biodiversity and reduce carbon emissions by planting trees worldwide. Join us by participating in tree-planting events, donating, or volunteering in your local community.</p>
+    </section>
+
+    <section id="donate" class="container donate-section">
+        <h2>Make a Donation</h2>
+        <div class="card">
+            <h3>Donate a Tree</h3>
+            <p>For every penny donated, help to plant a tree in a reforestation area. Help us make a difference by contributing to a greener future.</p>
+            <button>
+                <a href="dn.html" style="color: white; text-decoration: none;">DONATE NOW</a>
+            </button>
+        </div>
+        <div class="card">
+            <h3>Sponsor a Forest</h3>
+            <p>Contribute to larger projects by sponsoring entire reforestation efforts. Get updates on your forest’s progress and impact.</p>
+            <button>
+                <a href="spo.html" style="color: white; text-decoration: none;">Become a Sponsor</a>
+            </button>
+        </div>
+    </section>
+
+    <section id="volunteer" class="container volunteer-section">
+        <h2>Get Involved</h2>
+        <div class="card">
+            <h3>Volunteer Locally</h3>
+            <p>Sign up to help plant trees in your local community. Join a team of passionate individuals dedicated to protecting the environment.</p>
+            <button>
+                <a href="vl.html" style="color: white; text-decoration: none;">Sign Up</a>
+            </button>
+        </div>
+        <div class="card">
+            <h3>COMPLAINTS</h3>
+            <p>Identify the issues that have not yet been addressed and require improvement.</p>
+            <button>
+                <a href="iss.html" style="color: white; text-decoration: none;">DROP HERE</a>
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Future for Forests | Together, we grow greener.</p>
+    </footer>
+
+</body>
+</html>

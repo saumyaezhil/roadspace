@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Emergency SOS Alert</title>
+            <style>
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                    background: linear-gradient(135deg, #37474f, #263238);
+                    color: #e0f7fa;
+                    height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0;
+                }
+
+                .sos-button {
+                    background: linear-gradient(to right, #ff5733, #c70039);
+                    color: #fff;
+                    border: none;
+                    padding: 25px 50px;
+                    border-radius: 60px;
+                    font-size: 28px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+                    animation: pulse 2s infinite; /* Pulsing animation */
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .sos-button:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+                }
+
+                @keyframes pulse {
+                    0% {
+                        transform: scale(1);
+                    }
+                    50% {
+                        transform: scale(1.1);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                /* Modal Styles */
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    padding-top: 80px;
+                    animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                .modal-content {
+                    background-color: #f0f8f5;
+                    margin: 5% auto;
+                    padding: 30px;
+                    border-radius: 12px;
+                    width: 80%;
+                    color: #37474f;
+                    text-align: center;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                }
+
+                .close {
+                    color: #546e7a;
+                    float: right;
+                    font-size: 32px;
+                    font-weight: bold;
+                    transition: color 0.3s ease;
+                }
+
+                .close:hover,
+                .close:focus {
+                    color: #263238;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+                .modal-content h2 {
+                    font-size: 2.2em;
+                    margin-bottom: 20px;
+                    color: #00695c;
+                }
+
+                .modal-content p {
+                    font-size: 1.1em;
+                    margin-bottom: 30px;
+                }
+
+                .modal-content .sos-button {
+                    margin: 10px;
+                    padding: 15px 30px;
+                    font-size: 1.1em;
+                }
+            </style>
+        </head>
+        <body>
+
+            <button class="sos-button" id="emergencySOS">Emergency SOS</button>
+
+            <div id="alertModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Emergency SOS Activated!</h2>
+                    <p>Your emergency contacts have been notified. Help is on the way!</p>
+                    <p>Do you want to share your location with them?</p>
+                    <button class="sos-button" id="shareLocation">Yes</button>
+                    <button class="sos-button" id="cancelShare">No</button>
+                </div>
+            </div>
+
+            <script>
+                const modal = document.getElementById('alertModal');
+                const closeModal = document.getElementsByClassName('close')[0];
+                const shareLocationButton = document.getElementById('shareLocation');
+                const cancelShareButton = document.getElementById('cancelShare');
+
+                document.getElementById('emergencySOS').addEventListener('click', function() {
+                    modal.style.display = "block";
+                });
+
+                closeModal.onclick = function() {
+                    modal.style.display = "none";
+                };
+
+                window.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                };
+
+                shareLocationButton.addEventListener('click', function() {
+                    alert('Location shared with emergency contacts!');
+                    modal.style.display = "none";
+                });
+
+                cancelShareButton.addEventListener('click', function() {
+                    alert('Location not shared.');
+                    modal.style.display = "none";
+                });
+            </script>
+
+        </body>
+        </html>
+        

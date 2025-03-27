@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Alerts for Priority Seating</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+            color: #37474f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #00695c;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #546e7a;
+        }
+
+        select {
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+            margin: 20px 0;
+            cursor: pointer;
+            width: 300px; /* Adjust width as needed */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus {
+            border-color: #00695c;
+            outline: none;
+        }
+
+        .alert-message {
+            margin-top: 30px;
+            display: none;
+            font-size: 1.2em;
+            color: #ff5733;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function redirectToPage() {
+            const select = document.getElementById("specialAlerts");
+            const selectedValue = select.value;
+
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+
+        function showAlertMessage() {
+            const select = document.getElementById("specialAlerts");
+            const alertMessage = document.getElementById("alertMessage");
+
+            if (select.value) {
+                alertMessage.style.display = "block";
+                alertMessage.innerText = "Redirecting to information page...";
+            } else {
+                alertMessage.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Special Alerts for Priority Seating</h1>
+    <label for="specialAlerts">Choose an option:</label>
+    <select id="specialAlerts" onchange="showAlertMessage()" oninput="redirectToPage()">
+        <option value="" disabled selected>Select an option</option>
+        <option value="Booking1.html">Pregnant Women</option>
+        <option value="elder.html">Elderly Individuals</option>
+        <option value="BOOKING1.html">Traveling with Children</option>
+    </select>
+
+    <div class="alert-message" id="alertMessage"></div>
+
+</body>
+</html>

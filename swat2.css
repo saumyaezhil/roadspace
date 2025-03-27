@@ -1,0 +1,45 @@
+body{
+    background-color: black;
+    color:aliceblue;
+}
+header{
+    display:flex;
+    justify-content:space-between ;
+    align-items: center;
+    color:azure;
+}
+header a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.navbar a{
+
+    margin: 30px;
+    color:aliceblue;
+    text-decoration: none;
+}
+
+.landing{
+    padding: 150px;
+    background: url(https://in.images.search.yahoo.com/yhs/view;_ylt=Awrx_mY4NGlnt7wlqYYO9olQ;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2MxNzk5YjA0YTlmOGQ5ZTY2ZmJiZjM2NjY1MTMzMGRhBGdwb3MDMTEEaXQDYmluZw--?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fyhs%2Fsearch%3Fp%3Dchristmas%26ei%3DUTF-8%26type%3Dtype80160-3464885101%26fr%3Dyhs-sz-002%26hsimp%3Dyhs-002%26hspart%3Dsz%26param1%3D4198035981%26tab%3Dorganic%26ri%3D11&w=1600&h=1200&imgurl=www.zastavki.com%2Fpictures%2F1600x1200%2F2008%2FChristmas_wallpapers_Christmas_Tree___Christmas_011419_.jpg&rurl=https%3A%2F%2Fwww.zastavki.com%2Feng%2FHolidays%2FChristmas_wallpapers%2Fwallpaper-11419-2.htm&size=252KB&p=christmas&oid=c1799b04a9f8d9e66fbbf366651330da&fr2=&fr=yhs-sz-002&tt=Christmas+Tree+%2F+Christmas+Desktop+wallpapers+1600x1200&b=0&ni=160&no=11&ts=&tab=organic&sigr=NAp7.PW.1kTt&sigb=PRPMiNCAL7ea&sigi=H6iHGYjVHDwK&sigt=_7O6lhOrX.an&.crumb=2so31NZnvFs&fr=yhs-sz-002&hsimp=yhs-002&hspart=sz&type=type80160-3464885101&param1=4198035981);
+    background-size:cover;
+}
+.events{
+    display:flex;
+    justify-content: centre;
+    align-items: centre;
+    flex-direction: column;
+    
+
+}
+.eventshead{
+    font-size:30px;
+}
+.cards{
+    display:flex;
+    
+}
+.card{
+    
+}
+
