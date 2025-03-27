@@ -3,132 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train Food Booking</title>
+    <title>Food Ordering</title>
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+            background: linear-gradient(135deg, #f0f4c3, #c8e6c9);
             color: #37474f;
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px; /* Add padding for better spacing */
         }
 
-        .container {
+        header {
+            background-color: #00695c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        #content-container {
+            display: flex;
+            justify-content: space-between;
             width: 90%;
-            max-width: 500px; /* Limit container width for better readability */
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        #menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
             text-align: center;
         }
 
-        h1 {
-            margin-bottom: 30px;
-            font-size: 2.8em;
-            color: #00695c;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        label {
-            font-size: 1.2em;
-            display: block;
-            margin-bottom: 10px;
-            color: #546e7a;
-        }
-
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ccc;
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
             border-radius: 8px;
-            font-size: 18px;
-            background-color: #f9f9f9;
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
-            transition: border-color 0.3s ease;
+            margin-bottom: 10px;
         }
 
-        input:focus {
-            border-color: #00695c;
-            outline: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(to right, #ff5733, #c70039);
+        .menu-item button {
+            background-color: #ff5733;
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
         }
 
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        #cart {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 1500px;
+            align-self: flex-start;
         }
 
-        a {
-            color: white;
-            text-decoration: none;
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart li {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #cart li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Food Ordering</h1>
+    </header>
 
-    <div class="container">
-        <h1>Train Food Booking</h1>
-
-        <form action="confirmation.html" method="GET">
-            <div class="form-group">
-                <label for="trainNumber">Train Number:</label>
-                <input type="text" id="trainNumber" name="trainNumber" required>
+    <div id="content-container">
+        <div id="menu-container">
+            <div class="menu-item">
+                <img src="pizza.jpeg" alt="Pizza">
+                <h2>Pizza</h2>
+                <p>Delicious pizza with various toppings.</p>
+                <button onclick="addToCart('Pizza', 1200.99)">Add to Cart</button>
             </div>
-
-            <div class="form-group">
-                <label for="trainName">Train Name:</label>
-                <input type="text" id="trainName" name="trainName" required>
+            <div class="menu-item">
+                <img src="burger.jpeg" alt="Burger">
+                <h2>Burger</h2>
+                <p>Classic burger with fries.</p>
+                <button onclick="addToCart('Burger', 80.99)">Add to Cart</button>
             </div>
-
-            <div class="form-group">
-                <label for="userName">User Name:</label>
-                <input type="text" id="userName" name="userName" required>
+            <div class="menu-item">
+                <img src="salad.jpeg" alt="Salad">
+                <h2>Salad</h2>
+                <p>Fresh and healthy salad.</p>
+                <button onclick="addToCart('Salad', 266.99)">Add to Cart</button>
             </div>
-
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            <div class="menu-item">
+                <img src="pasta.jpeg" alt="Pasta">
+                <h2>Pasta</h2>
+                <p>Italian pasta with tomato sauce.</p>
+                <button onclick="addToCart('Pasta', 299.99)">Add to Cart</button>
             </div>
-
-            <div class="form-group">
-                <label for="coachPosition">Coach Position:</label>
-                <input type="text" id="coachPosition" name="coachPosition" required>
+            <div class="menu-item">
+                <img src="sushi.jpeg" alt="Sushi">
+                <h2>Sushi</h2>
+                <p>Fresh Japanese sushi rolls.</p>
+                <button onclick="addToCart('Sushi', 760.99)">Add to Cart</button>
             </div>
-
-            <div class="form-group">
-                <label for="seatNumber">Seat Number:</label>
-                <input type="text" id="seatNumber" name="seatNumber" required>
+            <div class="menu-item">
+                <img src="steak.jpeg" alt="Steak">
+                <h2>Steak</h2>
+                <p>Juicy grilled steak.</p>
+                <button onclick="addToCart('Steak', 600.99)">Add to Cart</button>
             </div>
+            <div class="menu-item">
+                <img src="noodles.jpeg" alt="Noodles">
+                <h2>Noodles</h2>
+                <p>Asian style noodles with vegetables.</p>
+                <button onclick="addToCart('Noodles', 399.99)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="tacos.jpeg" alt="Tacos">
+                <h2>Tacos</h2>
+                <p>Mexican tacos with salsa.</p>
+                <button onclick="addToCart('Tacos', 180.99)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="curry.jpeg" alt="Curry">
+                <h2>Curry</h2>
+                <p>Indian curry with rice.</p>
+                <button onclick="addToCart('Curry', 120.99)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="soup.jpeg" alt="Soup">
+                <h2>Soup</h2>
+                <p>Heartwarming vegetable soup.</p>
+                <button onclick="addToCart('Soup', 255.99)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="dessert.jpeg" alt="Dessert">
+                <h2>Dessert</h2>
+                <p>Sweet chocolate dessert.</p>
+                <button onclick="addToCart('Dessert', 116.99)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="sandwich.jpeg" alt="Sandwich">
+                <h2>Sandwich</h2>
+                <p>Classic club sandwich.</p>
+                <button onclick="addToCart('Sandwich', 100.99)">Add to Cart</button>
+            </div>
+        </div>
 
-            <button type="submit">
-                <a href="https://www.ecatering.irctc.co.in/">BOOK FOOD</a>
-            </button>
-        </form>
+        <div id="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: ₹<span id="cart-total">0.00</span></p>
+            <button onclick="placeOrder()">Place Order</button>
+        </div>
     </div>
 
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ₹${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        function placeOrder() {
+            if (cart.length > 0) {
+                alert('Order placed successfully!');
+                cart = [];
+                updateCart();
+            } else {
+                alert('Your cart is empty.');
+            }
+        }
+    </script>
 </body>
 </html>
