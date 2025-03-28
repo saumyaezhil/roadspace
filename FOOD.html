@@ -7,7 +7,10 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #f0f4c3, #c8e6c9);
+            background-image: url('pic.jpeg'); /* Set the background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Keep background fixed while scrolling */
             color: #37474f;
             margin: 0;
             padding: 0;
@@ -17,7 +20,7 @@
         }
 
         header {
-            background-color: #00695c;
+            background-color: rgba(2, 61, 54, 0.8); /* Semi-transparent background */
             color: white;
             padding: 20px;
             text-align: center;
@@ -30,6 +33,9 @@
             width: 90%;
             max-width: 1200px;
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent content background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         #menu-container {
@@ -41,7 +47,7 @@
         }
 
         .menu-item {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent menu item background */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 20px;
@@ -67,7 +73,7 @@
         }
 
         #cart {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent cart background */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
